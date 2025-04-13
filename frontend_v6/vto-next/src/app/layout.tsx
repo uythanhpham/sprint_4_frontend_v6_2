@@ -14,7 +14,6 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "VTO",
-  description: "FRONTEND_made by Uy:))",
 };
 
 export default function RootLayout({
