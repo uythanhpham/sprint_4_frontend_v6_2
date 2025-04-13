@@ -1,0 +1,73 @@
+/* ==== Container toàn trang Fitting ==== */
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 30px 14px;
+  display: flex;
+  flex-direction: column; /* sắp xếp các phần tử theo chiều dọc */
+  align-items: center;
+  justify-content: center; /* nếu cần căn giữa các khối con theo trục dọc */
+  gap: 20px;
+
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+  overflow: hidden; /* ngăn tràn nội dung */
+  min-height: 670px; /* đảm bảo tối thiểu cao */
+  position: relative;
+}
+
+/* ==== Wrapper cho từng khối ==== */
+.upload-body-wrapper,
+.items-row-wrapper,
+.result-box-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+/* ==== Responsive cho mobile ==== */
+@media (max-width: 768px) {
+  .container {
+    padding: 24px 16px;
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+    gap: 16px;
+  }
+
+  .upload-body-wrapper,
+  .result-box-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .upload-body-wrapper .rectangle-body,
+  .result-box-wrapper .rectangle-result {
+    width: 100%;
+    height: 100%;
+    max-width: 320px;
+    position: relative;
+    top: unset;
+    left: unset;
+    right: unset;
+  }
+
+  .items-row-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+}

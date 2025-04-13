@@ -1,0 +1,211 @@
+/* ==== Layout chính ==== */
+.middle-items {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+}
+
+/* ==== Cột chứa Item 1 + Item 2 ==== */
+.items-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: -1px;
+}
+
+/* ==== Wrapper mỗi ô ==== */
+.square-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* ==== Ô vuông chọn item ==== */
+.square {
+  color: #b55bee;
+  width: 220px;
+  height: 220px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 3px dashed #AF60FF;
+  border-radius: 20px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.square:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(175, 96, 255, 0.3);
+  border-color: #943fff;
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+/* ==== Nội dung bên trong ô ==== */
+.item-inner {
+  width: 90%;
+  height: 85%;
+  background-color: #f5e6ff;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+/* Nếu có ảnh thì đổi màu nền */
+.item-inner.has-image {
+  background-color: #ffffff;
+}
+
+/* ==== Đảm bảo ảnh giữ tỉ lệ ==== */
+.object-contain {
+  object-fit: contain;
+}
+
+/* ==== Dấu ➕ bên dưới Item 1 ==== */
+.plus-button {
+  position: absolute;
+  top: 102%;
+  left: 50%;
+  transform: translate(-50%, -20px);
+  font-size: 36px;
+  color: #a020f0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  animation: pulsePlus 1.5s ease-in-out infinite;
+  z-index: 10;
+}
+
+.plus-button:hover {
+  transform: translate(-50%, -24px) scale(1.2);
+}
+
+@keyframes pulsePlus {
+
+  0%,
+  100% {
+    transform: translate(-50%, -20px) scale(1);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: translate(-50%, -20px) scale(1.15);
+    opacity: 1;
+  }
+}
+
+/* ==== Ẩn input file nếu dùng ==== */
+input[type="file"] {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+}
+
+/* ==== Modal Overlay ==== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* ==== Modal Content ==== */
+.modal-content {
+  background: #fff;
+  padding: 24px 32px;
+  border-radius: 16px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 768px) {
+  .middle-items {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    top: unset;
+    left: unset;
+    transform: none;
+    height: auto;
+  }
+
+  .items-column {
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .square {
+    width: 160px;
+    aspect-ratio: 1 / 1;
+    font-size: 14px;
+  }
+
+  .plus-button {
+    transform: translate(-50%, -12px);
+  }
+
+  .plus-button:hover {
+    transform: translate(-50%, -16px) scale(1.2);
+  }
+
+  @keyframes pulsePlus {
+
+    0%,
+    100% {
+      transform: translate(-50%, -12px) scale(1);
+      opacity: 0.8;
+    }
+
+    50% {
+      transform: translate(-50%, -12px) scale(1.15);
+      opacity: 1;
+    }
+  }
+}

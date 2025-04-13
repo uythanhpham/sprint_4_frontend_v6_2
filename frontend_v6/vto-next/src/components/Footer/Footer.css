@@ -1,0 +1,109 @@
+/* ==== Footer ==== */
+
+.footer {
+    background-color: #3d00a0;
+    color: white;
+    padding: 60px 40px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+  
+  /* Subscribe (đăng ký nhận tin) */
+  .subscribe h3,
+  .help h3 {
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .subscribe-box {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 20px;
+  }
+  
+  .subscribe-box input {
+    border: none;
+    background: transparent;
+    color: rgb(252, 252, 252);
+    font-style: italic;
+    flex-grow: 1;
+    padding: 5px;
+  }
+  
+  .subscribe-box button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  /* Help section */
+  .help {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .help p {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  /* ==== Responsive Footer ==== */
+  
+  @media (max-width: 1024px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+  
+    .subscribe,
+    .help {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .subscribe-box {
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .footer {
+      padding: 40px 20px;
+      font-size: 14px;
+    }
+  
+    .footer h3 {
+      font-size: 22px;
+    }
+  
+    .footer p,
+    .subscribe-box input,
+    .subscribe-box button {
+      font-size: 14px;
+    }
+  
+    .subscribe-box {
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    .subscribe-box input {
+      text-align: center;
+    }
+  }
+  

@@ -1,0 +1,57 @@
+/* ==== Result Box ==== */
+
+/* Khung bên ngoài */
+.rectangle-result {
+    position: absolute;
+    right: 5%;
+    top: 10%;
+    width: 320px;
+    height: 80%;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #333;
+    border: 6px solid #F585C4;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 24px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  /* Nội dung bên trong */
+  .result-inner {
+    width: 90%;
+    height: 85%;
+    background-color: #ffe6f0;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: 500;
+    color: #cc5599;
+  }
+  
+  /* ==== Responsive ==== */
+  @media (max-width: 768px) {
+    .rectangle-result {
+      position: relative;
+      width: 100%;
+      height: auto;
+      top: unset;
+      right: unset;
+      margin-bottom: 20px;
+    }
+  
+    .result-inner {
+      width: 100%;
+      height: auto;
+      padding: 20px;
+    }
+  }
+  

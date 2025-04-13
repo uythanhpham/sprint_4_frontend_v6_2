@@ -1,0 +1,42 @@
+/* ==== Filter Menu ==== */
+
+.filter-menu {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+  
+  .filter-button {
+    padding: 12px 20px;
+    border-radius: 999px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #d4d4d4;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filter-button.active {
+    background: linear-gradient(135deg, #6e00ff, #b300ff);
+    color: white;
+    box-shadow: 0 6px 12px rgba(110, 0, 255, 0.4);
+  }
+  
+  /* ==== Responsive ==== */
+  @media (max-width: 768px) {
+    .filter-menu {
+      width: 100%;
+      gap: 10px;
+    }
+  
+    .filter-button {
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+  

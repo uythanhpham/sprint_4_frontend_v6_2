@@ -1,0 +1,50 @@
+/* ==== Clothes Grid ==== */
+
+.clothes-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* ==== Product Card ==== */
+  .product-card {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #e4e4e4;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* ==== Product Image ==== */
+  .product-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  
+  /* ==== Responsive ==== */
+  @media (max-width: 768px) {
+    .clothes-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding: 16px;
+    }
+  
+    .product-card {
+      height: 200px;
+    }
+  }
+  
